@@ -60,22 +60,25 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/audio_platform_info.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_platform_info.xml \
     $(LOCAL_PATH)/audio/mixer_paths_mtp.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths_mtp.xml
 
+# Camera
+PRODUCT_PACKAGES += \
+    camera.msm8953 \
+    libmm-qcamera
+
 # ConsumerIr
 PRODUCT_PACKAGES += \
     android.hardware.ir@1.0-impl \
     android.hardware.ir@1.0-service
 
-# Keymaster
-PRODUCT_PACKAGES += \
-    libkeymaster1
-
 # Ramdisk
 PRODUCT_PACKAGES += \
     init.goodix.sh \
+    init.recovery.qcom.rc \
+    init.recovery.qcom.usb.rc \
     init.tissot.rc
 
 # Sensors
-PRODUCT_PACKAGES += \
+PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/sensors/sensor_def_qcomdev.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/sensor_def_qcomdev.conf
 
 # Update engine
